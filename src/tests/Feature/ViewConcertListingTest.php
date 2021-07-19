@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Concert;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -32,6 +33,7 @@ class ViewConcertListingTest extends TestCase
             'zip' => 15311,
             'additional_information' => 'no info',
         ]);
+
         $response = $this->get(route('concert.view'));
         $response->assertSee('some title');
         $response->assertSee('some subtitle');
